@@ -1,48 +1,52 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Navbar, Sidebar, Footer } from './components'
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar, SidebarNavigator, Footer } from "./components";
+
 import {
   Home,
   SingleProduct,
   Cart,
-  Checkout,
+  CheckOut,
   Error,
   About,
   Products,
   PrivateRoute,
   AuthWrapper,
-} from './pages'
+} from "./pages";
+
 function App() {
   return (
     <AuthWrapper>
       <Router>
         <Navbar />
-        <Sidebar />
+        <SidebarNavigator />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path='/about'>
+          <Route exact path="/about">
             <About />
           </Route>
-          <Route path='/cart'>
+          <Route exact path="/cart">
             <Cart />
           </Route>
-          <Route exact path='/products'>
+          <Route exact path="/products">
             <Products />
           </Route>
-          <Route path='/products/:id' children={<SingleProduct />} />
-          <PrivateRoute path='/checkout'>
-            <Checkout />
+          <Route exact path="/product/:id">
+            <SingleProduct />
+          </Route>
+          <PrivateRoute exact path="/checkout">
+            <CheckOut />
           </PrivateRoute>
-          <Route path='*'>
+          <Route path="*">
             <Error />
           </Route>
         </Switch>
         <Footer />
       </Router>
     </AuthWrapper>
-  )
+  );
 }
 
-export default App
+export default App;
