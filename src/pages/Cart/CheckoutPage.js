@@ -2,12 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { HeadNavigator, StripeCheckout } from '../../components';
 
-// import { useCartContext } from '../../hooks/context/cart_context';
-// import { Link } from 'react-router-dom';
-
 function CheckoutPage() {
-  // const { cart } = useCartContext;
-
   return (
     <main>
       <HeadNavigator title=' Checkout' />

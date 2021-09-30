@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeadNavigator = ({ title, product }) => (
   <Wrapper>
-    <div className="section-center">
-      <h3 className="header">
-        <Link to="/">Home</Link>
-        {product && <Link to="/products">/ Products</Link>}/{title}
+    <div className='section-center'>
+      <h3 className='header'>
+        <Link to='/'>Home</Link>
+        {product && <Link to='/products'>/ Products</Link>}/ {title}
       </h3>
     </div>
   </Wrapper>

@@ -19,10 +19,10 @@ import SingleProductGallery from './Products/SingleProduct/SingleProductGallery'
 import ProductStars from './Products/SingleProduct/ProductStars';
 
 // # Cart
-import CartNavigate from './Cart/CartNavigator';
+import CartNavigate from './Navbar/CartNavigator';
 import Cart from './Cart/Cart';
-import AddToCart from './Cart/AddToCart';
-import StripeCheckout from './Cart/StripeCheckout';
+import AddToCart from './Products/SingleProduct/AddToCart';
+import StripeCheckout from './StripeCheckout';
 
 // # Global
 import Loading from './Loading';

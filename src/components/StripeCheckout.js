@@ -8,9 +8,9 @@ import {
   useElements,
 } from '@stripe/react-stripe-js';
 import axios from 'axios';
-import { useCartContext } from '../../hooks/context/cart_context';
-import { useUserContext } from '../../hooks/context/user_context';
-import { formatPrice } from '../../utils/helpers';
+import { useCartContext } from '../hooks/context/cart_context';
+import { useUserContext } from '../hooks/context/user_context';
+import { formatPrice } from '../utils/helpers';
 import { useHistory } from 'react-router-dom';
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);

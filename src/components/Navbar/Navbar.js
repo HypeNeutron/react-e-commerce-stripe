@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
-import { links } from "../../utils/Data";
-import CartNavigate from "../Cart/CartNavigator";
-import { useProductsContext } from "../../hooks/context/products_context";
-import { useCartContext } from "../../hooks/context/cart_context";
-import { useUserContext } from "../../hooks/context/user_context";
+import React from 'react';
+import styled from 'styled-components';
+import { FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.svg';
+import { links } from '../../utils/Data';
+import CartNavigate from './CartNavigator';
+import { useProductsContext } from '../../hooks/context/products_context';
+import { useCartContext } from '../../hooks/context/cart_context';
+import { useUserContext } from '../../hooks/context/user_context';
 
 function Navbar() {
   const { openSidebar } = useProductsContext();
@@ -16,17 +16,17 @@ function Navbar() {
 
   return (
     <Nav>
-      <div className="nav-layout">
-        <div className="nav-logo">
-          <Link to="/">
-            <img src={logo} alt="comfy sloth" className="logo" />
+      <div className='nav-layout'>
+        <div className='nav-logo'>
+          <Link to='/'>
+            <img src={logo} alt='comfy sloth' className='logo' />
           </Link>
-          <button type="button" className="toggleBtn" onClick={openSidebar}>
+          <button type='button' className='toggleBtn' onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
 
-        <ul className="nav-links">
+        <ul className='nav-links'>
           {links.map((link) => {
             const { id, text, url } = link;
             return (
@@ -37,7 +37,7 @@ function Navbar() {
           })}
           {myUser && totalItem > 0 && (
             <li>
-              <Link to="/checkout">checkout</Link>
+              <Link to='/checkout'>checkout</Link>
             </li>
           )}
         </ul>

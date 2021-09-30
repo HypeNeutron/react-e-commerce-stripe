@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
-import { useCartContext } from '../../hooks/context/cart_context';
+import { useCartContext } from '../../../hooks/context/cart_context';
 import AmountButtons from './AmountButtons';
 
 const AddToCart = ({ product }) => {
@@ -33,14 +33,16 @@ const AddToCart = ({ product }) => {
 
   return (
     <Wrapper>
-      <div className="colors">
+      <div className='colors'>
         <span>color : </span>
         <div>
           {colors.map((color, index) => (
             <button
               key={index}
               style={{ background: color }}
-              className={`${selectColor === color ? 'color-btn active' : 'color-btn'}`}
+              className={`${
+                selectColor === color ? 'color-btn active' : 'color-btn'
+              }`}
               onClick={() => setSelectColor(color)}>
               {selectColor === color ? <FaCheck /> : null}
             </button>
@@ -48,11 +50,15 @@ const AddToCart = ({ product }) => {
         </div>
       </div>
 
-      <div className="btn-container">
-        <AmountButtons amount={amount} increase={increase} decrease={decrease} />
+      <div className='btn-container'>
+        <AmountButtons
+          amount={amount}
+          increase={increase}
+          decrease={decrease}
+        />
         <Link
-          to="/cart"
-          className="btn"
+          to='/cart'
+          className='btn'
           onClick={() => addToCart(id, selectColor, amount, product)}>
           add to cart
         </Link>

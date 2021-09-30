@@ -1,15 +1,15 @@
-import About from "./Main/AboutPage";
-import Error from "./Main/ErrorPage";
-import Home from "./Main/HomePage";
+import PrivateRoute from './PrivateRoute';
+import AuthWrapper from './AuthWrapper';
+import Error from './ErrorPage';
 
-import Cart from "./Cart/CartPage";
-import CheckOut from "./Cart/CheckoutPage";
+import About from './AboutPage';
+import Home from './HomePage';
 
-import PrivateRoute from "./Private/PrivateRoute";
-import AuthWrapper from "./Private/AuthWrapper";
+import Cart from './Cart/CartPage';
+import CheckOut from './Cart/CheckoutPage';
 
-import Products from "./Products/ProductsPage";
-import SingleProduct from "./Products/SingleProductPage";
+import Products from './Products/ProductsPage';
+import SingleProduct from './Products/SingleProductPage';
 
 export {
   Home,

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 import { links } from '../../utils/Data';
 import logo from '../../assets/logo.svg';
-import CartNavigator from '../Cart/CartNavigator';
+import CartNavigator from './CartNavigator';
 import { useUserContext } from '../../hooks/context/user_context';
 import { useCartContext } from '../../hooks/context/cart_context';
 import { useProductsContext } from '../../hooks/context/products_context';

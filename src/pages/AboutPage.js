@@ -1,17 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import { HeadNavigator } from "../../components";
-import aboutImg from "../../assets/hero-bcg.jpeg";
+import React from 'react';
+import styled from 'styled-components';
+import { HeadNavigator } from '../components';
+import aboutImg from '../assets/hero-bcg.jpeg';
 
 const AboutPage = () => (
   <main>
-    <HeadNavigator title=" About" />
-    <Wrapper className="page section section-center">
-      <img src={aboutImg} alt="nice desk" />
+    <HeadNavigator title=' About' />
+    <Wrapper className='page section section-center'>
+      <img src={aboutImg} alt='nice desk' />
       <article>
-        <div className="title">
+        <div className='title'>
           <h2>our story</h2>
-          <div className="underline"></div>
+          <div className='underline'></div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Consequuntur, laboriosam. Ipsa voluptatibus, quo at voluptatem vitae
