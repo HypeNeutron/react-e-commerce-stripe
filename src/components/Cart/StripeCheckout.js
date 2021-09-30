@@ -37,7 +37,11 @@ const CheckoutForm = () => {
       const { data } = await axios.post(
         '/.netlify/functions/create-payment-intent',
 
-        JSON.stringify({ cart, shippingFee, totalAmt })
+        JSON.stringify({
+          cart,
+          shippingFee,
+          totalAmt,
+        })
       );
       setClientSecret(data.clientSecret);
     } catch (err) {
@@ -66,20 +70,24 @@ const CheckoutForm = () => {
       },
     },
   };
+
   const handleChange = async (event) => {
     // Listen for changes in the CardElement
     // and display any errors as the customer types their card details
     setDisabled(event.empty);
     setError(event.error ? event.error.message : '');
   };
+
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     setProcessing(true);
+
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
       },
     });
+
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`);
       setProcessing(false);
@@ -90,11 +98,12 @@ const CheckoutForm = () => {
       setTimeout(() => {
         clearCart();
         history.push('/');
-      }, 10000);
+      }, 7000);
     }
   };
+
   return (
-    <div>
+    <div className='container-payment'>
       {succeeded ? (
         <article>
           <h4>Thank you</h4>
@@ -104,27 +113,31 @@ const CheckoutForm = () => {
       ) : (
         <article>
           <h4>Hello, {myUser && myUser.name}</h4>
-          <p>Your total is {formatPrice(totalAmt)}</p>
+          <p>Your total is {formatPrice(totalAmt + shippingFee)}</p>
           <p>Test Card Number: 4242 4242 4242 4242</p>
         </article>
       )}
+
       <form id='payment-form' onSubmit={handleSubmit}>
         <CardElement
           id='card-element'
           options={cardStyle}
           onChange={handleChange}
         />
+
         <button disabled={processing || disabled || succeeded} id='submit'>
           <span id='button-text'>
             {processing ? <div className='spinner' id='spinner'></div> : 'Pay'}
           </span>
         </button>
+
         {/* Show any error that happens when processing the payment */}
         {error && (
           <div className='card-error' role='alert'>
             {error}
           </div>
         )}
+
         {/* Show a success message upon completion */}
         <p className={succeeded ? 'result-message' : 'result-message hidden'}>
           Payment succeeded, see the result in your
@@ -150,8 +163,14 @@ const StripeCheckout = () => {
 };
 
 const Wrapper = styled.section`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
   form {
-    width: 30vw;
+    max-width: 99vw;
+    width: 500px;
+    margin: 0 auto;
     align-self: center;
     box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
       0px 2px 5px 0px rgba(50, 50, 93, 0.1),
@@ -284,7 +303,7 @@ const Wrapper = styled.section`
   }
   @media only screen and (max-width: 600px) {
     form {
-      width: 80vw;
+      width: 85vw;
     }
   }
 `;

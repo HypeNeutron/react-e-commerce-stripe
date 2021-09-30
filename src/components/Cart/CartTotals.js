@@ -1,39 +1,39 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useCartContext } from "../../hooks/context/cart_context";
-import { useUserContext } from "../../hooks/context/user_context";
-import { formatPrice } from "../../utils/helpers";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { useCartContext } from '../../hooks/context/cart_context';
+import { useUserContext } from '../../hooks/context/user_context';
+import { formatPrice } from '../../utils/helpers';
 
 function CartTotals() {
   const { total_amount: totalAmount, shipping_fee: fee } = useCartContext();
   const { myUser, loginWithRedirect } = useUserContext();
   return (
     <Wrapper>
-      <div className="cartTotal-container">
+      <div className='cartTotal-container'>
         <article>
           <h5>
-            <span className="head">subtotal :</span>
+            <span className='head'>subtotal :</span>
             <span>{formatPrice(totalAmount)}</span>
           </h5>
           <p>
-            <span className="head"> shipping fee :</span>
+            <span className='head'> shipping fee :</span>
             <span>{formatPrice(fee)}</span>
           </p>
           <hr />
           <h4>
-            <span className="head">order total:</span>
+            <span className='head'>order total:</span>
             <span>{formatPrice(totalAmount + fee)}</span>
           </h4>
         </article>
         {myUser ? (
-          <Link to="/checkout" className="checkoutBtn btn">
+          <Link to='/checkout' className='checkoutBtn btn'>
             proceed to checkout
           </Link>
         ) : (
           <button
-            type="button"
-            className="checkoutBtn btn"
+            type='button'
+            className='checkoutBtn btn'
             onClick={loginWithRedirect}>
             Login
           </button>

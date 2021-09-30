@@ -1,4 +1,14 @@
-#### .env vars
+# React Comfy Example E-Commerce
+
+## Tool to Development
+
+- Netlify Functions Using API Cross Origin Form: course-api
+- React Env bundle context and reducer
+- Stripe third party
+
+### Netlify Deploy Build [ Show Advanced ] New Available All in .env
+
+### .env vars
 
 - REACT_APP_AUTH_DOMAIN=
 - REACT_APP_CLIENT_ID=
@@ -7,10 +17,10 @@
 
 #### Extra Setup
 
-```
-npm install dotenv@8.2.0 stripe@8.130.0 @stripe/react-stripe-js@1.1.2 @stripe/stripe-js@1.11.0 netlify@6.0.12
+```Terminal
+npm i dotenv stripe @stripe/react-stripe-js @stripe/stripe-js netlify
 ```
 
-```
-npm install netlify-cli -D
+```Terminal
+npm i netlify-cli -D
 ```
