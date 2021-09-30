@@ -45,7 +45,7 @@ const CheckoutForm = () => {
       );
       setClientSecret(data.clientSecret);
     } catch (err) {
-      console.log(err.response);
+      setError(`Payment accessing failed ${err} Please try again`);
     }
   };
   useEffect(() => {

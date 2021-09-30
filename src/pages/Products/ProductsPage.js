@@ -1,22 +1,22 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 import {
   FiltersProducts,
-  ProductList,
+  ProductView,
   SortProducts,
   HeadNavigator,
-} from "../../components";
+} from '../../components';
 
 function ProductsPage() {
   return (
     <main>
-      <HeadNavigator title=" Products" />
-      <Wrapper className="page">
-        <div className="section-center products">
+      <HeadNavigator title=' Products' />
+      <Wrapper className='page'>
+        <div className='section-center products'>
           <FiltersProducts />
-          <div className="product-main">
+          <div className='product-main'>
             <SortProducts />
-            <ProductList />
+            <ProductView />
           </div>
         </div>
       </Wrapper>

@@ -7,8 +7,10 @@ import GridView from './ProductsGridView';
 import ListView from './ProductListView';
 
 const ProductView = () => {
-  const { filtered_products: products, grid_view: gridView } = useFilterProductContext();
-  const { products_error: error, products_loading: loading } = useProductsContext();
+  const { products_error: error, products_loading: loading } =
+    useProductsContext();
+  const { filtered_products: products, grid_view: gridView } =
+    useFilterProductContext();
 
   if (error) {
     return <Error />;
@@ -19,14 +21,18 @@ const ProductView = () => {
   }
 
   if (products.length < 1) {
-    return <h5 style={{ textTransform: 'none' }}>Sorry, no products matched your search.</h5>;
+    return (
+      <h5 style={{ textTransform: 'none' }}>
+        Sorry, no products matched your search.
+      </h5>
+    );
   }
 
   if (gridView === false) {
     return <ListView products={products} />;
   }
 
-  return <GridView products={products}>product list</GridView>;
+  return <GridView products={products} />;
 };
 
 export default ProductView;

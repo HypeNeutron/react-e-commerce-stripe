@@ -1,32 +1,34 @@
 // # Home
-import Hero from './Home/Hero'
-import FeaturedProducts from './Home/FeaturedProducts'
-import Services from './Home/Services'
-import Contact from './Home/Contact'
+import Hero from './Home/Hero';
+import FeaturedProducts from './Home/FeaturedProducts';
+import Services from './Home/Services';
+import Contact from './Home/Contact';
 
 // # Navbar
-import Navbar from './Navbar/Navbar'
-import SidebarNavigator from './Navbar/SidebarNavigator'
+import Navbar from './Navbar/Navbar';
+import SidebarNavigator from './Navbar/SidebarNavigator';
 
 // # Products
-import FiltersProducts from './Products/FiltersProducts'
-import SortProducts from './Products/SortProducts'
-import ProductList from './Products/ProductView'
-import ProductItem from './Products/ProductItem'
-import SingleProductGallery from './Products/ProductGallery'
-import ProductStars from './Products/ProductStars'
+import FiltersProducts from './Products/FiltersProducts';
+import SortProducts from './Products/SortProducts';
+import ProductView from './Products/ProductView';
+import ProductItem from './Products/ProductItem';
+
+// # Single Product
+import SingleProductGallery from './Products/SingleProduct/SingleProductGallery';
+import ProductStars from './Products/SingleProduct/ProductStars';
 
 // # Cart
-import CartNavigate from './Cart/CartNavigator'
-import Cart from './Cart/Cart'
-import AddToCart from './Cart/AddToCart'
-import StripeCheckout from './Cart/StripeCheckout'
+import CartNavigate from './Cart/CartNavigator';
+import Cart from './Cart/Cart';
+import AddToCart from './Cart/AddToCart';
+import StripeCheckout from './Cart/StripeCheckout';
 
 // # Global
-import Loading from './Loading'
-import Error from './Error'
-import HeadNavigator from './HeadNavigator'
-import Footer from './Footer'
+import Loading from './Loading';
+import Error from './Error';
+import HeadNavigator from './HeadNavigator';
+import Footer from './Footer';
 
 export {
   FeaturedProducts,
@@ -42,11 +44,11 @@ export {
   SingleProductGallery,
   AddToCart,
   FiltersProducts,
-  ProductList,
+  ProductView,
   ProductItem,
   SortProducts,
   ProductStars,
   Cart,
   HeadNavigator,
   StripeCheckout,
-}
+};

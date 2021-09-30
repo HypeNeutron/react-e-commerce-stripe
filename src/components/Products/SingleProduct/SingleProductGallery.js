@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const ProductGallery = ({ images = [{ url: '' }] }) => {
+const SingleProductGallery = ({ images = [{ url: '' }] }) => {
   const [main, setMain] = useState(images[0]);
 
   return (
     <Wrapper>
-      <img src={main.url} alt="mainImage" className="main" />
-      <div className="gallery">
+      <img src={main.url} alt='mainImage' className='main' />
+      <div className='gallery'>
         {images.map((image, index) => (
           <img
             src={image.url}
@@ -67,4 +67,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default ProductGallery;
+export default SingleProductGallery;

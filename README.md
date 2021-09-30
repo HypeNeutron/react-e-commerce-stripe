@@ -2,9 +2,10 @@
 
 ## Tool to Development
 
-- Netlify Functions Using API Cross Origin Form: course-api
-- React Env bundle context and reducer
-- Stripe third party
+- Netlify Serverless Functions Stripe
+- Stripe payment third party
+- Using API Cross Origin Form: course-api
+- React bundle context and reducer
 
 ### Netlify Deploy Build [ Show Advanced ] New Available All in .env
 
@@ -23,4 +24,13 @@ npm i dotenv stripe @stripe/react-stripe-js @stripe/stripe-js netlify
 
 ```Terminal
 npm i netlify-cli -D
+```
+
+#### Strip CSP in fixing in index.html meta Tag in setting up
+
+```html
+  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; 
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://js.stripe.com;
+  frame-src 'self' https://js.stripe.com https://hooks.stripe.com">
+
 ```
