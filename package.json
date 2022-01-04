@@ -4,22 +4,22 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
-    "@stripe/react-stripe-js": "^1.5.0",
-    "@stripe/stripe-js": "^1.18.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.1",
-    "@testing-library/user-event": "^13.2.1",
-    "axios": "^0.21.4",
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.22.0",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
-    "netlify": "^8.0.1",
+    "netlify": "^10.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "stripe": "^8.176.0",
-    "styled-components": "^5.3.1",
-    "web-vitals": "^2.1.0"
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "stripe": "^8.195.0",
+    "styled-components": "^5.3.3",
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,13 +46,13 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.26.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.4.1"
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1"
   }
 }

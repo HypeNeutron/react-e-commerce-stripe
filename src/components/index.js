@@ -12,7 +12,7 @@ import SidebarNavigator from './Navbar/SidebarNavigator';
 import FiltersProducts from './Products/FiltersProducts';
 import SortProducts from './Products/SortProducts';
 import ProductView from './Products/ProductView';
-import ProductItem from './Products/ProductItem';
+import ProductItem from './Products/ProductViews/ProductGridItem';
 
 // # Single Product
 import SingleProductGallery from './Products/SingleProduct/SingleProductGallery';
@@ -21,7 +21,7 @@ import ProductStars from './Products/SingleProduct/ProductStars';
 // # Cart
 import CartNavigate from './Navbar/CartNavigator';
 import Cart from './Cart/Cart';
-import AddToCart from './Products/SingleProduct/AddToCart';
+import AddToCart from './Products/SingleProduct/AddtoCartDetails/AddToCart';
 import StripeCheckout from './StripeCheckout';
 
 // # Global

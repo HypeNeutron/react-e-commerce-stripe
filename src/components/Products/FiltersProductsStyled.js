@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Wrapper = styled.section`
+export default styled.section`
   .form-control {
     margin-bottom: 1.25rem;
     h5 {

@@ -1,7 +1,7 @@
-import PrivateRoute from './PrivateRoute';
-import AuthWrapper from './AuthWrapper';
-import Error from './ErrorPage';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import AuthWrapper from './PrivateRoute/AuthWrapper';
 
+import Error from './ErrorPage';
 import About from './AboutPage';
 import Home from './HomePage';
 

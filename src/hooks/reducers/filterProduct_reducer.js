@@ -66,24 +66,30 @@ const filterProductReducer = (state, action) => {
     case FILTER_PRODUCTS: {
       let { all_products: allProduct } = state;
 
-      const {
-        text, category, company, color, price, shipping,
-      } = state.filters;
+      const { text, category, company, color, price, shipping } = state.filters;
 
       if (text) {
-        allProduct = allProduct.filter((product) => product.name.toLowerCase().startsWith(text));
+        allProduct = allProduct.filter((product) =>
+          product.name.toLowerCase().startsWith(text)
+        );
       }
 
       if (category !== 'all') {
-        allProduct = allProduct.filter((product) => product.category === category);
+        allProduct = allProduct.filter(
+          (product) => product.category === category
+        );
       }
 
       if (company !== 'all') {
-        allProduct = allProduct.filter((product) => product.company === company);
+        allProduct = allProduct.filter(
+          (product) => product.company === company
+        );
       }
 
       if (color !== 'all') {
-        allProduct = allProduct.filter((product) => product.colors.find((c) => c === color));
+        allProduct = allProduct.filter((product) =>
+          product.colors.find((c) => c === color)
+        );
       }
 
       if (price === 0) {

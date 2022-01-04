@@ -4,7 +4,7 @@ import {
   COUNT_CART_TOTALS,
   REMOVE_CART_ITEM,
   TOGGLE_CART_ITEM_AMOUNT,
-} from "../../actions";
+} from '../../actions';
 
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -57,14 +57,14 @@ const cartReducer = (state, action) => {
       const data = state.cart.map((item) => {
         if (item.id === id) {
           switch (value) {
-            case "inc": {
+            case 'inc': {
               let newAmount = item.amount + 1;
               if (newAmount > item.stock) {
                 newAmount = item.stock;
               }
               return { ...item, amount: newAmount };
             }
-            case "dec": {
+            case 'dec': {
               let newAmount = item.amount - 1;
               if (newAmount < 1) {
                 newAmount = 1;
