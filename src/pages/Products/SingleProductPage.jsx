@@ -15,7 +15,7 @@ import {
 
 function SingleProductPage() {
   const { id } = useParams();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const {
     single_product_loading: loading,
@@ -31,10 +31,10 @@ function SingleProductPage() {
   useEffect(() => {
     if (error) {
       setTimeout(() => {
-        history.push('/');
+        navigate('/');
       }, 3000);
     }
-  }, [error, history]);
+  }, [error, navigate]);
 
   if (loading) {
     return <Loading />;

@@ -21,20 +21,14 @@ function App() {
         <Navbar />
         <SidebarNavigator />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/cart" element={<Cart />} />
-          <Route exact path="/products" element={<Products />} />
-          <Route exact path="/product/:id" element={<SingleProduct />} />
-          <Route
-            exact
-            path="/checkout"
-            element={
-              <PrivateRoute>
-                <CheckOut />
-              </PrivateRoute>
-            }
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="products" element={<Products />} />
+          <Route path="product/:id" element={<SingleProduct />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="checkout" element={<CheckOut />} />
+          </Route>
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
