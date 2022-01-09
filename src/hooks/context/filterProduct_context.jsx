@@ -28,6 +28,7 @@ const initialState = {
     shipping: false,
   },
 };
+
 const FilterProductContext = React.createContext();
 
 export function FilterProductProvider({ children }) {

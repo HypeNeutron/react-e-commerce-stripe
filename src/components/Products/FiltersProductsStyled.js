@@ -1,10 +1,34 @@
 import styled from 'styled-components';
 
 export default styled.section`
+  .filterContainer {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+  }
+
   .form-control {
     margin-bottom: 1.25rem;
     h5 {
       margin-bottom: 0.5rem;
+    }
+  }
+  .shipping {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 1rem;
+    input {
+      margin-left: 8px;
+      margin-top: 2px;
+    }
+  }
+
+  .category-container {
+    text-align: center;
+    .category {
+      display: grid;
+      justify-content: center;
     }
   }
 
@@ -42,6 +66,7 @@ export default styled.section`
   .colors {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .colorBtn {
@@ -84,26 +109,32 @@ export default styled.section`
     margin-bottom: 0.25rem;
   }
 
-  .shipping {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    text-transform: capitalize;
-    column-gap: 0.5rem;
-    font-size: 1rem;
-  }
-
   .clearBtn {
     background: var(--clr-red-dark);
     color: var(--clr-white);
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
   }
+  /* @media screen and (min-width: ;){
+  
+  } */
 
   @media (min-width: 768px) {
-    .content {
+    .colors {
+      justify-content: initial;
+    }
+    .filterContainer {
+      text-align: initial;
+      justify-content: initial;
       position: sticky;
       top: 1rem;
+    }
+
+    .category-container {
+      text-align: initial;
+      .category {
+        display: block;
+      }
     }
   }
 `;

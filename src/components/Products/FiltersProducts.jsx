@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
-import FiltersStyled from './FiltersProductsStyled';
+import FilterSection from './FiltersProductsStyled';
 import { useFilterProductContext } from '../../hooks/context/filterProduct_context';
 import { getUniqueValues, formatPrice } from '../../utils/helpers';
 
-function Filters() {
+export default function Filters() {
   const {
     filters: {
       text,
@@ -26,8 +26,8 @@ function Filters() {
   const colors = getUniqueValues(allProduct, 'colors');
 
   return (
-    <FiltersStyled>
-      <div className="content">
+    <FilterSection>
+      <div className="filterContainer">
         <form onSubmit={(e) => e.preventDefault()}>
           {/** search input -------------------*/}
           <div className="form-control">
@@ -43,9 +43,9 @@ function Filters() {
           {/** End search input -------------------*/}
 
           {/* categories -------------------*/}
-          <div className="form-control">
+          <div className="form-control category-container">
             <h5>category</h5>
-            <div>
+            <div className="category">
               {categories.map((unique) => (
                 <button
                   key={unique.id}
@@ -152,12 +152,11 @@ function Filters() {
           </div>
           {/* End FreeShipping-------------------*/}
         </form>
+
         <button type="button" className="clearBtn" onClick={clearFilters}>
           clear filters
         </button>
       </div>
-    </FiltersStyled>
+    </FilterSection>
   );
 }
-
-export default Filters;

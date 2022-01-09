@@ -36,25 +36,28 @@ const filterProductReducer = (state, action) => {
 
     case SORT_PRODUCTS: {
       const { sort, filtered_products: filteredProducts } = state;
-
-      if (sort === 'price-lowest') {
-        //* Sort for price value Less-than or More-then -1 1 0
-        filteredProducts.sort((a, b) => a.price - b.price);
+      switch (sort) {
+        case 'price-lowest': {
+          //* Sort for price value Less-than or More-then -1 1 0
+          filteredProducts.sort((a, b) => a.price - b.price);
+          break;
+        }
+        case 'price-highest': {
+          filteredProducts.sort((a, b) => b.price - a.price);
+          break;
+        }
+        case 'name-a': {
+          //* localeCompare return number indicating string comes before or after
+          filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+          break;
+        }
+        case 'name-z': {
+          filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+          break;
+        }
+        default:
+          break;
       }
-
-      if (sort === 'price-highest') {
-        filteredProducts.sort((a, b) => b.price - a.price);
-      }
-
-      if (sort === 'name-a') {
-        //* localeCompare return number indicating string comes before or after
-        filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-      }
-
-      if (sort === 'name-z') {
-        filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
-      }
-
       return { ...state, filtered_products: filteredProducts };
     }
 
@@ -70,7 +73,7 @@ const filterProductReducer = (state, action) => {
 
       if (text) {
         allProduct = allProduct.filter((product) =>
-          product.name.toLowerCase().startsWith(text)
+          product.name.toLowerCase().includes(text)
         );
       }
 
@@ -95,11 +98,12 @@ const filterProductReducer = (state, action) => {
       if (price === 0) {
         allProduct = [];
       }
-      allProduct = allProduct.filter((product) => product.price <= price);
 
       if (shipping) {
         allProduct = allProduct.filter((product) => product.shipping === true);
       }
+
+      allProduct = allProduct.filter((product) => product.price <= price);
 
       return { ...state, filtered_products: allProduct };
     }

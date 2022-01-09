@@ -33,6 +33,7 @@ export default function SortProducts() {
       </div>
       <p>{products.length} products found</p>
       <hr />
+      {/* Select */}
       <form>
         <label htmlFor="sort">
           sort by
@@ -63,10 +64,9 @@ const Wrapper = styled.section`
   margin-bottom: 2rem;
 
   .btn-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 0.5rem;
-    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
 
     button {
       cursor: pointer;
@@ -104,6 +104,7 @@ const Wrapper = styled.section`
       border-color: transparent;
       font-size: 1rem;
       text-transform: capitalize;
+      margin-left: 0.8em;
       padding: 0.25rem 0.5rem;
     }
   }
@@ -112,8 +113,9 @@ const Wrapper = styled.section`
     grid-template-columns: auto auto 1fr auto;
     row-gap: 0;
     .btn-container {
-      width: auto;
+      width: 56px;
     }
+
     form {
       label {
         display: inline;
