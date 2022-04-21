@@ -6,7 +6,8 @@ import About from './AboutPage';
 import Home from './HomePage';
 
 import Cart from './Cart/CartPage';
-import CheckOut from './Cart/CheckoutPage';
+
+import CheckOut from './Checkout/CheckoutPage';
 
 import Products from './Products/ProductsPage';
 import SingleProduct from './Products/SingleProductPage';

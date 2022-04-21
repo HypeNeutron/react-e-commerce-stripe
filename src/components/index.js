@@ -22,7 +22,7 @@ import ProductStars from './Products/SingleProduct/ProductStars';
 import CartNavigate from './Navbar/CartNavigator';
 import Cart from './Cart/Cart';
 import AddToCart from './Products/SingleProduct/AddtoCartDetails/AddToCart';
-import StripeCheckout from './StripeCheckout';
+import StripeIndex from './Checkout/StripeIndex';
 
 // # Global
 import Loading from './Loading';
@@ -50,5 +50,5 @@ export {
   ProductStars,
   Cart,
   HeadNavigator,
-  StripeCheckout,
+  StripeIndex,
 };

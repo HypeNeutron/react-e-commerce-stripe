@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HeadNavigator, StripeCheckout } from '../../components';
+import { HeadNavigator, StripeIndex } from '../../components';
 
 function CheckoutPage() {
   return (
     <main>
       <HeadNavigator title=" Checkout" />
       <Wrapper className="page">
-        <StripeCheckout />
+        <StripeIndex />
       </Wrapper>
     </main>
   );
