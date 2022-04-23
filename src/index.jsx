@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import { Auth0Provider } from '@auth0/auth0-react';
 import AppContextProvider from './hooks/context/context';
@@ -16,8 +16,8 @@ import App from './App';
  * PrivateRoute Auth0 use in withAuthenticationRequired
  * <PrivateRoute><Checkout/></PrivateRoute>
  */
-
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+root.render(
   <Auth0Provider
     domain={process.env.REACT_APP_AUTH_DOMAIN}
     clientId={process.env.REACT_APP_CLIENT_ID}
@@ -27,6 +27,5 @@ ReactDOM.render(
     <AppContextProvider>
       <App />
     </AppContextProvider>
-  </Auth0Provider>,
-  document.getElementById('root')
+  </Auth0Provider>
 );
