@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsFillGridFill, BsList } from 'react-icons/bs';
-import { useFilterProductContext } from '../../hooks/context/filterProduct_context';
+import { useFilterProductContext } from '../../context/filterProduct_context';
 
 export default function SortProducts() {
   const {

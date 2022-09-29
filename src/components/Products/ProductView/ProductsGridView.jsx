@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductGridItem from './ProductGridItem';
+import ProductsGridViewItem from './ProductsGridViewItem';
 
 export default function ProductsGridView({ products }) {
   return (
@@ -9,7 +9,10 @@ export default function ProductsGridView({ products }) {
         {products.map((product) => {
           const { image, name, price, id } = product;
           return (
-            <ProductGridItem key={product.id} {...{ image, name, price, id }} />
+            <ProductsGridViewItem
+              key={product.id}
+              {...{ image, name, price, id }}
+            />
           );
         })}
       </div>
@@ -32,6 +35,7 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
   @media (min-width: 1170px) {
     .products-container {
       grid-template-columns: repeat(3, 1fr);

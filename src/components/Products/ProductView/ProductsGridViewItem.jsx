@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../../../utils/helpers';
 
-function ProductGridItem({ image, name, price, id }) {
+function ProductsGridViewItem({ image, name, price, id }) {
   return (
     <Wrapper>
       <div className="imgContainer">
@@ -27,13 +27,14 @@ const Wrapper = styled.article`
     background: var(--clr-black);
     border-radius: var(--radius);
 
-    :hover a:link {
+    :hover .linkProduct {
       opacity: 1;
     }
 
     :hover img {
       opacity: 0.5;
     }
+
     img {
       width: 100%;
       display: block;
@@ -41,6 +42,7 @@ const Wrapper = styled.article`
       border-radius: var(--radius);
       transition: var(--transition);
     }
+
     .linkProduct {
       position: absolute;
       top: 50%;
@@ -79,4 +81,4 @@ const Wrapper = styled.article`
     }
   }
 `;
-export default ProductGridItem;
+export default ProductsGridViewItem;

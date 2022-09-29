@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useCartContext } from '../../hooks/context/cart_context';
-import { useUserContext } from '../../hooks/context/user_context';
+import { useCartContext } from '../../context/cart_context';
+import { useUserContext } from '../../context/user_context';
 import { formatPrice } from '../../utils/helpers';
 
 function CartTotals() {
@@ -10,7 +10,7 @@ function CartTotals() {
   const { myUser, loginWithRedirect } = useUserContext();
   return (
     <Wrapper>
-      <div className="cartTotal-container">
+      <div className="cartTotal-center">
         <article>
           <h5>
             <span className="head">subtotal :</span>
@@ -73,7 +73,7 @@ const Wrapper = styled.section`
       justify-self: start;
     }
   }
-  .cartTotal-container {
+  .cartTotal-center {
     text-align: center;
   }
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 import FilterSection from './FiltersProductsStyled';
-import { useFilterProductContext } from '../../hooks/context/filterProduct_context';
-import { getUniqueValues, formatPrice } from '../../utils/helpers';
+import { useFilterProductContext } from '../../../context/filterProduct_context';
+import { getUniqueValues, formatPrice } from '../../../utils/helpers';
 
 export default function Filters() {
   const {
@@ -27,15 +27,15 @@ export default function Filters() {
 
   return (
     <FilterSection>
-      <div className="filterContainer">
+      <div className="filters">
         <form onSubmit={(e) => e.preventDefault()}>
           {/** search input -------------------*/}
-          <div className="form-control">
+          <div className="filters__form-control">
             <input
               type="text"
               name="text"
               placeholder="search"
-              className="searchInput"
+              className="filters__searchInput"
               value={text}
               onChange={updateFilters}
             />
@@ -43,9 +43,9 @@ export default function Filters() {
           {/** End search input -------------------*/}
 
           {/* categories -------------------*/}
-          <div className="form-control category-container">
+          <div className="filters__form-control filters__form-control--category">
             <h5>category</h5>
-            <div className="category">
+            <div className="category-center">
               {categories.map((unique) => (
                 <button
                   key={unique.id}
@@ -53,7 +53,9 @@ export default function Filters() {
                   type="button"
                   name="category"
                   className={`${
-                    category === unique.toLowerCase() ? 'active' : null
+                    category === unique.toLowerCase()
+                      ? 'categoryBtn__active'
+                      : null
                   }`}
                 >
                   {unique}
@@ -64,13 +66,13 @@ export default function Filters() {
           {/* End categories -------------------*/}
 
           {/* companies -------------------*/}
-          <div className="form-control">
+          <div className="filters__form-control">
             <h5>company</h5>
             <select
               name="company"
               value={company}
               onChange={updateFilters}
-              className="company"
+              className="filters__select-company"
             >
               {companies.map((unique) => (
                 <option key={unique.id} value={unique}>
@@ -82,9 +84,9 @@ export default function Filters() {
           {/* End companies -------------------*/}
 
           {/* colors -------------------*/}
-          <div className="form-control">
+          <div className="filters__form-control">
             <h5>colors</h5>
-            <div className="colors">
+            <div className="filters__colors-center">
               {colors.map((c) => {
                 if (c === 'all') {
                   return (
@@ -95,7 +97,9 @@ export default function Filters() {
                       type="button"
                       data-color="all"
                       className={`${
-                        color === 'all' ? 'allBtn active' : 'allBtn'
+                        color === 'all'
+                          ? 'allColorBtn allColorBtn--active'
+                          : 'allColorBtn'
                       }`}
                     >
                       all
@@ -108,7 +112,7 @@ export default function Filters() {
                     name="color"
                     style={{ background: c }}
                     className={`${
-                      color === c ? 'colorBtn active' : 'colorBtn'
+                      color === c ? 'colorsBtn colorsBtn--active' : 'colorsBtn'
                     }`}
                     type="button"
                     data-color={c}
@@ -123,9 +127,9 @@ export default function Filters() {
           {/* End colors -------------------*/}
 
           {/* price range-------------------*/}
-          <div className="form-control">
+          <div className="filters__form-control">
             <h5>price</h5>
-            <p className="price">{formatPrice(price)}</p>
+            <p className="filters__priceRange-format">{formatPrice(price)}</p>
             <input
               type="range"
               name="price"
@@ -138,7 +142,7 @@ export default function Filters() {
           {/* End price range-------------------*/}
 
           {/* FreeShipping-------------------*/}
-          <div className="form-control shipping">
+          <div className="filters__form-control filters__form-control--shipping">
             <label htmlFor="shipping" name="shipping" id="shipping">
               free shipping
               <input
@@ -153,7 +157,11 @@ export default function Filters() {
           {/* End FreeShipping-------------------*/}
         </form>
 
-        <button type="button" className="clearBtn" onClick={clearFilters}>
+        <button
+          type="button"
+          className="clearAllFilterBtn"
+          onClick={clearFilters}
+        >
           clear filters
         </button>
       </div>

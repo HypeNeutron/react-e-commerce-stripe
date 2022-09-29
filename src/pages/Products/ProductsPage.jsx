@@ -4,13 +4,13 @@ import {
   FiltersProducts,
   ProductView,
   SortProducts,
-  HeadNavigator,
+  Breadcrumb,
 } from '../../components';
 
 function ProductsPage() {
   return (
     <main>
-      <HeadNavigator title=" Products" />
+      <Breadcrumb title=" Products" />
       <Wrapper className="page">
         <div className="section-center products">
           <FiltersProducts />

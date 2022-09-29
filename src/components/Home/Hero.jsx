@@ -73,7 +73,6 @@ const Wrapper = styled.section`
     .img-container {
       display: block;
       position: relative;
-
       &:before {
         content: '';
         position: absolute;

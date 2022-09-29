@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useCallback, useContext, useEffect, useReducer } from 'react';
-import reducer from '../reducers/products_reducer';
-import { productsUrl as proUrl } from '../../utils/Data';
+import reducer from './reducers/products_reducer';
+import { productsUrl } from '../utils/Data';
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -11,7 +11,7 @@ import {
   GET_SINGLE_PRODUCT_LOADING,
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
-} from '../../actions';
+} from './actions';
 
 const initialState = {
   isSidebarOpen: false,
@@ -37,10 +37,10 @@ export function ProductsProvider({ children }) {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  const fetchProducts = async (url) => {
+  const fetchProducts = async () => {
     dispatch({ type: GET_PRODUCTS_LOADING });
     try {
-      const resp = await axios.get(url);
+      const resp = await axios.get(productsUrl);
       const products = resp.data;
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
     } catch (error) {
@@ -60,7 +60,7 @@ export function ProductsProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    fetchProducts(proUrl);
+    fetchProducts();
   }, []);
 
   const allValue = React.useMemo(() => {

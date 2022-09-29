@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useReducer, useMemo } from 'react';
-import reducer from '../reducers/filterProduct_reducer';
+import reducer from './reducers/filterProduct_reducer';
 import { useProductsContext } from './products_context';
 import {
   LOAD_PRODUCTS,
@@ -10,7 +10,7 @@ import {
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
-} from '../../actions';
+} from './actions';
 
 const initialState = {
   filtered_products: [],

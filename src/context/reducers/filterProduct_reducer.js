@@ -7,7 +7,7 @@ import {
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
-} from '../../actions';
+} from '../actions';
 
 const filterProductReducer = (state, action) => {
   switch (action.type) {

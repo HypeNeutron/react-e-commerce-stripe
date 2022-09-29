@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useCartContext } from '../../hooks/context/cart_context';
-import { useUserContext } from '../../hooks/context/user_context';
+import { useCartContext } from '../../context/cart_context';
+import { useUserContext } from '../../context/user_context';
 import { formatPrice } from '../../utils/helpers';
 
 export default function CheckoutForm() {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useProductsContext } from '../../hooks/context/products_context';
+import { useProductsContext } from '../../context/products_context';
 import { singleProductUrl as url } from '../../utils/Data';
 import { formatPrice } from '../../utils/helpers';
 import {
@@ -10,7 +10,7 @@ import {
   SingleProductGallery,
   AddToCart,
   ProductStars,
-  HeadNavigator,
+  Breadcrumb,
 } from '../../components';
 
 function SingleProductPage() {
@@ -36,13 +36,9 @@ function SingleProductPage() {
     }
   }, [error, navigate]);
 
-  if (loading) {
-    return <Loading />;
-  }
+  if (loading) return <Loading />;
 
-  if (error) {
-    return <Error />;
-  }
+  if (error) return <Error />;
 
   const {
     name,
@@ -58,7 +54,7 @@ function SingleProductPage() {
 
   return (
     <Wrapper>
-      <HeadNavigator title={name} product />
+      <Breadcrumb title={name} product />
       <div className="section section-center page">
         <Link to="/products" className="btn">
           back to products

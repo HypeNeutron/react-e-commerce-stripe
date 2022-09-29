@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HeadNavigator } from '../components';
+import { Breadcrumb } from '../components';
 import aboutImg from '../assets/hero-bcg.jpeg';
 
 export default function AboutPage() {
   return (
     <main>
-      <HeadNavigator title=" About" />
+      <Breadcrumb title=" About" />
       <Wrapper className="page section section-center">
         <img src={aboutImg} alt="nice desk" />
         <article>

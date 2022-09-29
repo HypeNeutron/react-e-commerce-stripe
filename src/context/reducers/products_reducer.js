@@ -7,7 +7,7 @@ import {
   GET_SINGLE_PRODUCT_LOADING,
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
-} from '../../actions';
+} from '../actions';
 
 const productsReducer = (state, action) => {
   switch (action.type) {

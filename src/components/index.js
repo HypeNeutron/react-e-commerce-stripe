@@ -12,7 +12,7 @@ import SidebarNavigator from './Navbar/SidebarNavigator';
 import FiltersProducts from './Products/FiltersProducts';
 import SortProducts from './Products/SortProducts';
 import ProductView from './Products/ProductView';
-import ProductItem from './Products/ProductViews/ProductGridItem';
+import ProductItem from './Products/ProductView/ProductsGridViewItem';
 
 // # Single Product
 import SingleProductGallery from './Products/SingleProduct/SingleProductGallery';
@@ -21,13 +21,13 @@ import ProductStars from './Products/SingleProduct/ProductStars';
 // # Cart
 import CartNavigate from './Navbar/CartNavigator';
 import Cart from './Cart/Cart';
-import AddToCart from './Products/SingleProduct/AddtoCartDetails/AddToCart';
+import AddToCart from './Cart/AddToCart';
 import StripeIndex from './Checkout/StripeIndex';
 
 // # Global
 import Loading from './Loading';
 import Error from './Error';
-import HeadNavigator from './HeadNavigator';
+import Breadcrumb from './Breadcrumb';
 import Footer from './Footer';
 
 export {
@@ -49,6 +49,6 @@ export {
   SortProducts,
   ProductStars,
   Cart,
-  HeadNavigator,
+  Breadcrumb,
   StripeIndex,
 };

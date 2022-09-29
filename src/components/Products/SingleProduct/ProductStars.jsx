@@ -4,12 +4,11 @@ import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 export default function ProductStars({ stars, reviews }) {
   const tempStars = Array.from({ length: 5 }, (_, index) => {
-    const isStarsHaft = (allStar, numHaft) =>
-      allStar >= numHaft ? <BsStarHalf /> : <BsStar />;
-    const numberHaft = index + 0.5;
+    const isStarsHaft = (allStar, numFullHaft) =>
+      allStar >= numFullHaft ? <BsStarHalf /> : <BsStar />;
     return (
       <span key={index}>
-        {stars >= index + 1 ? <BsStarFill /> : isStarsHaft(stars, numberHaft)}
+        {stars >= index + 1 ? <BsStarFill /> : isStarsHaft(stars, index + 0.5)}
       </span>
     );
   });

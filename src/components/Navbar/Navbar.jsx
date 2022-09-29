@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import { links } from '../../utils/Data';
 import CartNavigate from './CartNavigator';
-import { useProductsContext } from '../../hooks/context/products_context';
-import { useCartContext } from '../../hooks/context/cart_context';
-import { useUserContext } from '../../hooks/context/user_context';
+import { useProductsContext } from '../../context/products_context';
+import { useCartContext } from '../../context/cart_context';
+import { useUserContext } from '../../context/user_context';
 
 function Navbar() {
   const { openSidebar } = useProductsContext();
@@ -84,6 +84,7 @@ const Nav = styled.nav`
   .nav-links {
     display: none;
   }
+
   .cartNavigator {
     display: none;
   }
@@ -101,7 +102,6 @@ const Nav = styled.nav`
       li {
         margin: 0 0.5rem;
       }
-
       a {
         color: var(--clr-grey-3);
         font-size: 1rem;
@@ -109,7 +109,6 @@ const Nav = styled.nav`
         letter-spacing: var(--spacing);
         padding: 0.5rem;
       }
-
       a:hover {
         border-bottom: 2px solid var(--clr-primary-7);
       }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useProductsContext } from '../../hooks/context/products_context';
+import { useProductsContext } from '../../context/products_context';
 import Error from '../Error';
 import Loading from '../Loading';
-import Product from '../Products/ProductViews/ProductGridItem';
+import Product from '../Products/ProductView/ProductsGridViewItem';
 
 function FeaturedProducts() {
   const {

@@ -1,13 +1,11 @@
-export const formatPrice = (number) =>
-  new Intl.NumberFormat('en-US', {
+export const formatPrice = (number, format = 'en-US', currency = 'USD') =>
+  new Intl.NumberFormat(format, {
     style: 'currency',
-    currency: 'USD',
+    currency,
   }).format(number / 100);
 
-export const getUniqueValues = (data, type) => {
-  let unique = data.map((item) => item[type]);
-  if (type === 'colors') {
-    unique = unique.flat();
-  }
+export const getUniqueValues = (data, prop) => {
+  let unique = data.map((item) => item[prop]);
+  if (unique instanceof Array) unique = unique.flat();
   return ['all', ...new Set(unique)];
 };

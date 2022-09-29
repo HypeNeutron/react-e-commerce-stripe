@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export default function HeadNavigator({ title, product }) {
+export default function Breadcrumb({ title, product }) {
   return (
     <Wrapper>
       <div className="section-center">

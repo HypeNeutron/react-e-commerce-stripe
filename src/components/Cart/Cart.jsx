@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useCartContext } from '../../hooks/context/cart_context';
+import { useCartContext } from '../../context/cart_context';
 import CartHeader from './CartHeader';
 import CartItem from './CartItem';
 import CartTotals from './CartTotals';
@@ -60,6 +60,7 @@ const Wrapper = styled.section`
     letter-spacing: var(--spacing);
     font-weight: 400;
     cursor: pointer;
+
     &--clear {
       background: var(--clr-black);
       @media (max-width: 776px) {

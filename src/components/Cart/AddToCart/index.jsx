@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
-import { useCartContext } from '../../../../hooks/context/cart_context';
+import { useCartContext } from '../../../context/cart_context';
 import AmountButtons from './AmountButtons';
 
 export default function AddToCart({ product }) {
@@ -14,9 +14,7 @@ export default function AddToCart({ product }) {
   const increase = () => {
     setAmount((prev) => {
       let tempAmount = prev + 1;
-      if (tempAmount > stock) {
-        tempAmount = 1;
-      }
+      if (tempAmount > stock) tempAmount = 1;
       return tempAmount;
     });
   };
@@ -24,9 +22,7 @@ export default function AddToCart({ product }) {
   const decrease = () => {
     setAmount((prev) => {
       let tempAmount = prev - 1;
-      if (tempAmount < 1) {
-        tempAmount = stock;
-      }
+      if (tempAmount < 1) tempAmount = stock;
       return tempAmount;
     });
   };

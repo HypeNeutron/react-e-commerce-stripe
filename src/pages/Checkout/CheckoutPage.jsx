@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HeadNavigator, StripeIndex } from '../../components';
+import { Breadcrumb, StripeIndex } from '../../components';
 
 function CheckoutPage() {
   return (
     <main>
-      <HeadNavigator title=" Checkout" />
+      <Breadcrumb title=" Checkout" />
       <Wrapper className="page">
         <StripeIndex />
       </Wrapper>

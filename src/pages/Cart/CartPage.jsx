@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useCartContext } from '../../hooks/context/cart_context';
-import { Cart, HeadNavigator } from '../../components';
+import { useCartContext } from '../../context/cart_context';
+import { Cart, Breadcrumb } from '../../components';
 
 function CartPage() {
   const { cart } = useCartContext();
@@ -21,7 +21,7 @@ function CartPage() {
 
   return (
     <main>
-      <HeadNavigator title=" Cart" />
+      <Breadcrumb title=" Cart" />
       <Wrapper className="page">
         <Cart />
       </Wrapper>

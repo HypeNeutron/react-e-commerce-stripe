@@ -8,23 +8,22 @@ export default function AuthWrapper({ children }) {
 
   if (isLoading) {
     return (
-      <Wrapper>
+      <Section>
         <Loading />
-      </Wrapper>
+      </Section>
     );
   }
-
   if (error) {
     return (
-      <Wrapper>
+      <Section>
         <h1>{error.message}</h1>
-      </Wrapper>
+      </Section>
     );
   }
   return children;
 }
 
-const Wrapper = styled.section`
+const Section = styled.section`
   min-height: 100vh;
   display: grid;
   place-items: center;

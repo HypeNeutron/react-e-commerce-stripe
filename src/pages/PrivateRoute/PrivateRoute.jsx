@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import { useCartContext } from '../../hooks/context/cart_context';
+import { useCartContext } from '../../context/cart_context';
 
 export default function PrivateRoute() {
   const { user } = useAuth0();
